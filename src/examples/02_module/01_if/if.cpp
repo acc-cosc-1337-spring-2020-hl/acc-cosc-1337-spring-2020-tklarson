@@ -7,7 +7,7 @@
 
 bool is_even(int num)
 {
-	return num % 2;//num % mod 2 is a boolean expression
+	return num % 2 == 0;//num % mod 2 is a boolean expression
 }
 
 //write code for function named overtime that accepts a double hours and returns true if 
