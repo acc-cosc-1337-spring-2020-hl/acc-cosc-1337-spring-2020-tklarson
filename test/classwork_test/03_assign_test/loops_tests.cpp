@@ -8,12 +8,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Verify Factorial Function")
 {
-	int num3 = 6, num4 = 24, num5 = 120;
-
-	factorial(num3, num4, num5);
-
-	REQUIRE(num3 == 6);
-	REQUIRE(num4 == 24);
-	REQUIRE(num5 == 120);
-
+	REQUIRE(factorial(3) == 6);
+	REQUIRE(factorial(4) == 24);
+	REQUIRE(factorial(5) == 120);
 }

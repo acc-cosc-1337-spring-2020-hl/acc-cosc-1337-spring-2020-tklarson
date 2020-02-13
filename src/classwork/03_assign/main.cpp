@@ -1,5 +1,5 @@
 //write includes statements
-
+#include "loops.h"
 #include<iostream>
 
 //write using statements for cin and cout
@@ -15,16 +15,12 @@ factorial.  Also, loop continues as long as user wants to.
 
 int main() 
 {
-		int i, num = 1;
+		int num;
 
 		cout << "Enter a positive integer: ";
 		cin >> num;
 
-		for (i = 1; i <= num; ++i) 
-		{
-			factorial *= i;
-		}
-		cout << "Factorial of " << num << " = " << factorial;
+		cout << "Factorial of " << num << " = " << factorial(num);
 
 		return 0;
 }
