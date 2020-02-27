@@ -10,9 +10,12 @@ that calculates area of the rectangle.  The class has 3 int private variables ar
 class Rect
 {
 public:
-	Rect(int width, int height);
-	int calc_area()const { return area};
-	void set_values(int, int);
+	Rect(int width, int height) : width{ width }, height{ height } {calculate_area(); }
+	int get_area()const { return area; }
+	
 private:
-	int area( width * height)
+	void calculate_area();
+	int area;
+	int height;
+	int width;
 };
