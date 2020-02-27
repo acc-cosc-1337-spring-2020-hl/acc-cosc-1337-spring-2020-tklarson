@@ -1,4 +1,5 @@
 //Write include statement
+#include<rectangle.h>
 
 
 /*
@@ -6,3 +7,9 @@ Write the class function code for the Rectangle class with one constructor that 
 has one public function area that returns the area of the rectangle, and one private function calculate_area
 that calculates area of the rectangle.  The class has 3 int private variables area, width, and height.
 */
+
+void Rectangle::set_values(int x, int y)
+{
+	width = x;
+	height = y;
+}
