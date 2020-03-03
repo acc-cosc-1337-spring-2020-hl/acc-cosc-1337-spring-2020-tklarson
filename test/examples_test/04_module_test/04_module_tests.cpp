@@ -11,7 +11,6 @@ TEST_CASE("Test Bank Account get_balance")
 	BankAccount account(150);
 
 	REQUIRE(account.get_balance() == 150);
-
 }
 
 TEST_CASE("Test Bank Account deposit")
@@ -26,7 +25,6 @@ TEST_CASE("Test Bank Account deposit")
 
 	account.deposit(50);
 	REQUIRE(account.get_balance() == 200);
-	
 }
 
 TEST_CASE("Test Bank Account withdraw")
@@ -43,6 +41,33 @@ TEST_CASE("Test Bank Account withdraw")
 
 	REQUIRE_THROWS_AS(account.withdraw(101), InvalidAmount);
 	REQUIRE(account.get_balance() == 100);
+}
 
+TEST_CASE("Test default constructor for balance = 0")
+{
+	BankAccount account;
+	REQUIRE(account.get_balance() == 0);
+}
+
+TEST_CASE("Test default constructor open account")
+{
+	BankAccount account;
+	REQUIRE(account.get_balance() == 0);
+
+	account.open(25);
+	REQUIRE(account.get_balance() == 25);
+
+}
+
+TEST_CASE("Test default constructor account already open")
+{
+	BankAccount account(50);
+	REQUIRE_THROWS_AS(account.open(25), InvalidAmount);
+}
+
+TEST_CASE("Test default constructor open account with less than 25")
+{
+	BankAccount account;
+	REQUIRE_THROWS_AS(account.open(24), InvalidAmount);
 
 }
