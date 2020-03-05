@@ -3,6 +3,7 @@
 #include<iostream>	
 #include<vector>
 
+using std::cin;
 using std::cout;
 using std::vector;
 /*
@@ -23,7 +24,7 @@ int main()
 
 	for (auto r : rectangles) 
 	{
-		cout << r.get_area() << "\n";
+		cout << "Area" << r.get_area() << "\n";
 		total += r.get_area();
 	}
 

@@ -1,6 +1,6 @@
 //Write include statement
 #include<rectangle.h>
-
+#include<iostream>
 
 /*
 Write the class function code for the Rectangle class with one constructor that accepts two int parameters (width, height),
@@ -12,3 +12,11 @@ void Rect::calculate_area()
 {
 	area = width * height;
 }
+
+std::ostream & operator<<(std::ostream & out, const Rect & r)
+{
+	out << "Area is: " << r.area << "\n";
+
+	return out;
+}
+
