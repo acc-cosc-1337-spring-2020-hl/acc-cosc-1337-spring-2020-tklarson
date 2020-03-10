@@ -1,4 +1,4 @@
-#include "bank_account.h"
+#include "checking_account.h"
 #include<iostream>
 #include<vector>
 
@@ -8,7 +8,8 @@ using std::vector;
 
 int main()
 {
-	BankAccount a(50), b(10);
+	CheckingAccount c;
+	CheckingAccount a(50), b(10);
 	//BankAccount c = a + b;
 	display_balance(a);
 	cin >> a;
