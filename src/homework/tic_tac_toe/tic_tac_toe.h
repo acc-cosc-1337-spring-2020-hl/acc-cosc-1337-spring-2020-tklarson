@@ -1,6 +1,7 @@
 //tic_taco_toe.h
 #include<string>
 using std::string;
+using std::vector;
 #include<vector>
 
 class TicTacToe
@@ -12,21 +13,27 @@ public:
 	void mark_board(int position);
 	string get_player() const { return player; };
 	void display_board()const;
+	bool get_winner();
 private:
 	void set_next_player();
 	void clear_board();
 	bool check_board_full();
-	std::string player;
-	std::vector<std::string>pegs{ 9, " " };
+	bool check_column_win();
+	bool check_row_win();
+	bool check_diagonal_win();
+	void set_winner();
+	string player;
+	vector<string>pegs{ 9, " " };
+	string winner;
 };
 
 class Error
 {
 public:
 	Error(std::string msg) : message{ msg } {};
-	std::string get_message()const { return message; };
+	string get_message()const { return message; };
 
 private:
-	std::string message;
+	string message;
 
 };

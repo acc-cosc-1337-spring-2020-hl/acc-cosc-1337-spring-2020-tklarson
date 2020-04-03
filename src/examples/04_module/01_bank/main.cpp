@@ -2,12 +2,13 @@
 #include "savings_account.h"
 #include<iostream>
 #include<vector>
-
+#include<memory>
 using std::cout;
 using std::cin;
 using std::vector;
 using std::reference_wrapper;
-
+using std::unique_ptr; 
+using std::make_unique;
 
 int main()
 {
@@ -40,15 +41,14 @@ int main()
 	
 
 
-	CheckingAccount c(100);
-	SavingsAccount s(100);
-	vector<reference_wrapper<BankAccount> acts{s, c};
+	unique_ptr<BankAccount> c = make_unique<CheckingAccount>(100);
+	unique_ptr<BankAccount> s = make_unique<SavingsAccount>(100);
 
-	acts[0].get_balance();
+	vector<unique_ptr<BankAccount>>acts{std::move(s), std::move(c)};
 
-	for (auto account_ref : acts)
+	for (auto &account : acts)
 	{
-		cout << account._ref.get(). << "\n";
+		cout << account->get_balance() << "\n";
 
 	}
 
