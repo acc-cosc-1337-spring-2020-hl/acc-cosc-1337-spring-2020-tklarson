@@ -68,3 +68,8 @@ std::istream & operator>>(std::istream & in, BankAccount & b)
 	b.deposit(amount);
 	return in;
 }
+
+int BankAccount::get_balance()const
+{
+	return balance;
+}

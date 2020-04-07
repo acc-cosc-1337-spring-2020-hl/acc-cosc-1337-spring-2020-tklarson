@@ -12,6 +12,7 @@ using std::make_unique;
 
 int main()
 {
+	CheckingAccount b1;
 	CheckingAccount c(100);
 	CheckingAccount a(50), b(10);
 	//BankAccount c = a + b;
@@ -49,7 +50,6 @@ int main()
 	for (auto &account : acts)
 	{
 		cout << account->get_balance() << "\n";
-
 	}
 
 	return 0;
